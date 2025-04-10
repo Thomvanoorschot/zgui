@@ -696,3 +696,6 @@ pub fn plotCandlestick(label_id: [:0]const u8, xs: []const f64, opens: []const f
 }
 extern fn zguiPlot_PlotCandlestick(label_id: [*:0]const u8, xs: *const f64, opens: *const f64, closes: *const f64, lows: *const f64, highs: *const f64, count: i32, tooltip: bool, width_percent: f32, bull_col: *const [4]f32, bear_col: *const [4]f32) void;
 //----------------------------------------------------------------------------------------------
+pub const getPlotDrawList = zguiPlot_GetPlotDrawList;
+extern fn zguiPlot_GetPlotDrawList() gui.DrawList;
+//----------------------------------------------------------------------------------------------
