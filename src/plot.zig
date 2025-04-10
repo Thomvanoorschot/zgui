@@ -691,3 +691,8 @@ extern fn zguiPlot_ShowDemoWindow(popen: ?*bool) void;
 pub const endPlot = zguiPlot_EndPlot;
 extern fn zguiPlot_EndPlot() void;
 //----------------------------------------------------------------------------------------------
+pub fn plotCandlestick(label_id: [:0]const u8, xs: []const f64, opens: []const f64, closes: []const f64, lows: []const f64, highs: []const f64, count: i32, tooltip: bool, width_percent: f32, bull_col: [4]f32, bear_col: [4]f32) void {
+    zguiPlot_PlotCandlestick(label_id, xs.ptr, opens.ptr, closes.ptr, lows.ptr, highs.ptr, count, tooltip, width_percent, &bull_col, &bear_col);
+}
+extern fn zguiPlot_PlotCandlestick(label_id: [*:0]const u8, xs: *const f64, opens: *const f64, closes: *const f64, lows: *const f64, highs: *const f64, count: i32, tooltip: bool, width_percent: f32, bull_col: *const [4]f32, bear_col: *const [4]f32) void;
+//----------------------------------------------------------------------------------------------

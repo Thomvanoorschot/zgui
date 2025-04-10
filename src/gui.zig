@@ -3872,6 +3872,7 @@ pub const DrawCallback = *const fn (*const anyopaque, *const DrawCmd) callconv(.
 pub const getWindowDrawList = zguiGetWindowDrawList;
 pub const getBackgroundDrawList = zguiGetBackgroundDrawList;
 pub const getForegroundDrawList = zguiGetForegroundDrawList;
+pub const getPlotDrawList = zguiGetPlotDrawList;
 
 pub const createDrawList = zguiCreateDrawList;
 pub fn destroyDrawList(draw_list: DrawList) void {
@@ -3884,6 +3885,7 @@ pub fn destroyDrawList(draw_list: DrawList) void {
 extern fn zguiGetWindowDrawList() DrawList;
 extern fn zguiGetBackgroundDrawList() DrawList;
 extern fn zguiGetForegroundDrawList() DrawList;
+extern fn zguiGetPlotDrawList() DrawList;
 extern fn zguiCreateDrawList() DrawList;
 extern fn zguiDestroyDrawList(draw_list: DrawList) void;
 

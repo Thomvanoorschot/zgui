@@ -2013,6 +2013,11 @@ extern "C"
         return ImGui::GetForegroundDrawList();
     }
 
+    ZGUI_API ImDrawList *zguiGetPlotDrawList(void)
+    {
+        return ImGui::GetPlotDrawList();
+    }
+
     ZGUI_API ImDrawList *zguiCreateDrawList(void)
     {
         return IM_NEW(ImDrawList)(ImGui::GetDrawListSharedData());
