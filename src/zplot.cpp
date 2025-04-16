@@ -335,10 +335,10 @@ extern "C"
         return ImPlot::GetPlotDrawList();
     }
 
-    // ZGUI_API void zguiPlot_PlotCandlestick(const char* label_id, const double* xs, const double* opens, const double* closes, const double* lows, const double* highs, int count, bool tooltip, float width_percent, ImVec4 bullCol, ImVec4 bearCol)
-    // {
-    //     ImPlot::PlotCandlestick(label_id, xs, opens, closes, lows, highs, count, tooltip, width_percent, bull_col, bear_col);
-    // }
+    ZGUI_API void zguiPlot_PlotCandlestick(const char* label_id, const double* xs, const double* opens, const double* closes, const double* lows, const double* highs, int count, bool tooltip, float width_percent, ImVec4 bullCol, ImVec4 bearCol)
+    {
+        ImPlot::PlotCandlestick(label_id, xs, opens, closes, lows, highs, count, tooltip, width_percent, bull_col, bear_col);
+    }
 
     ZGUI_API void zguiPlot_EndPlot(void)
     {
