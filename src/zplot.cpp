@@ -98,6 +98,16 @@ extern "C"
         return ImPlot::BeginPlot(title_id, {width, height}, flags);
     }
 
+    ZGUI_API ImVec2 zguiPlot_PlotToPixels(double x, double y, ImAxis x_axis, ImAxis y_axis)
+    {
+        return ImPlot::PlotToPixels(x, y, x_axis, y_axis);
+    }
+
+    ZGUI_API ImVec2 zguiPlot_PlotToPixels(double x, double y, ImAxis x_axis, ImAxis y_axis)
+    {
+        return ImPlot::PlotToPixels(x, y, x_axis, y_axis);
+    }
+
     ZGUI_API void zguiPlot_PlotLineValues(
         const char *label_id,
         ImGuiDataType data_type,
@@ -335,10 +345,6 @@ extern "C"
         return ImPlot::GetPlotDrawList();
     }
 
-    ZGUI_API void zguiPlot_PlotCandlestick(const char* label_id, const double* xs, const double* opens, const double* closes, const double* lows, const double* highs, int count, bool tooltip, float width_percent, ImVec4 bullCol, ImVec4 bearCol)
-    {
-        ImPlot::PlotCandlestick(label_id, xs, opens, closes, lows, highs, count, tooltip, width_percent, bull_col, bear_col);
-    }
 
     ZGUI_API void zguiPlot_EndPlot(void)
     {

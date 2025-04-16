@@ -691,21 +691,8 @@ extern fn zguiPlot_ShowDemoWindow(popen: ?*bool) void;
 pub const endPlot = zguiPlot_EndPlot;
 extern fn zguiPlot_EndPlot() void;
 //----------------------------------------------------------------------------------------------
-pub const plotCandlestick = zguiPlot_PlotCandlestick;
-extern fn zguiPlot_PlotCandlestick(
-    label_id: [*c]const u8,
-    xs: [*]const f64,
-    opens: [*]const f64,
-    closes: [*]const f64,
-    lows: [*]const f64,
-    highs: [*]const f64,
-    count: c_int,
-    tooltip: bool,
-    width_percent: f32,
-    bullCol: [4]f32,
-    bearCol: [4]f32,
-) void;
-//----------------------------------------------------------------------------------------------
 pub const getPlotDrawList = zguiPlot_GetPlotDrawList;
 extern fn zguiPlot_GetPlotDrawList() gui.DrawList;
 //----------------------------------------------------------------------------------------------
+pub const plotToPixels = zguiPlot_PlotToPixels;
+extern fn zguiPlot_PlotToPixels(x: f64, y: f64, x_axis: Axis, y_axis: Axis) [2]f32;
