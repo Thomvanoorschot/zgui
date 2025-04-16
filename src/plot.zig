@@ -694,5 +694,9 @@ extern fn zguiPlot_EndPlot() void;
 pub const getPlotDrawList = zguiPlot_GetPlotDrawList;
 extern fn zguiPlot_GetPlotDrawList() gui.DrawList;
 //----------------------------------------------------------------------------------------------
-pub const plotToPixels = zguiPlot_PlotToPixels;
-extern fn zguiPlot_PlotToPixels(x: f64, y: f64, x_axis: Axis, y_axis: Axis) [2]f32;
+pub fn plotToPixels(x: f64, y: f64, x_axis: Axis, y_axis: Axis) [2]f32 {
+    var vec: [2]f32 = undefined;
+    zguiPlot_PlotToPixels(&vec, x, y, x_axis, y_axis);
+    return vec;
+}
+extern fn zguiPlot_PlotToPixels(out_vec: *[2]f32, x: f64, y: f64, x_axis: Axis, y_axis: Axis) void;
