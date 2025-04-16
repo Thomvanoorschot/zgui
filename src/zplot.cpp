@@ -102,12 +102,7 @@ extern "C"
     {
         return ImPlot::PlotToPixels(x, y, x_axis, y_axis);
     }
-
-    ZGUI_API ImVec2 zguiPlot_PlotToPixels(double x, double y, ImAxis x_axis, ImAxis y_axis)
-    {
-        return ImPlot::PlotToPixels(x, y, x_axis, y_axis);
-    }
-
+    
     ZGUI_API void zguiPlot_PlotLineValues(
         const char *label_id,
         ImGuiDataType data_type,
