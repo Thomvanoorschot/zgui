@@ -709,5 +709,5 @@ pub fn beginItem(label_id: [:0]const u8, flags: ItemFlags, recolor_from: [4]f32)
 }
 extern fn zguiPlot_BeginItem(label_id: [*:0]const u8, flags: ItemFlags, recolor_from: [4]f32) bool;
 //----------------------------------------------------------------------------------------------
-pub const EndItem = zguiPlot_EndItem;
+pub const endItem = zguiPlot_EndItem;
 extern fn zguiPlot_EndItem() void;
