@@ -1308,9 +1308,6 @@ IMPLOT_API void ShowSubplotsContextMenu(ImPlotSubplot& subplot);
 // [SECTION] Item Utils
 //-----------------------------------------------------------------------------
 
-// Begins a new item. Returns false if the item should not be plotted. Pushes PlotClipRect.
-IMPLOT_API bool BeginItem(const char* label_id, ImPlotItemFlags flags=0, ImPlotCol recolor_from=IMPLOT_AUTO);
-
 // Same as above but with fitting functionality.
 template <typename _Fitter>
 bool BeginItemEx(const char* label_id, const _Fitter& fitter, ImPlotItemFlags flags=0, ImPlotCol recolor_from=IMPLOT_AUTO) {
@@ -1323,8 +1320,7 @@ bool BeginItemEx(const char* label_id, const _Fitter& fitter, ImPlotItemFlags fl
     return false;
 }
 
-// Ends an item (call only if BeginItem returns true). Pops PlotClipRect.
-IMPLOT_API void EndItem();
+
 
 // Register or get an existing item from the current plot.
 IMPLOT_API ImPlotItem* RegisterOrGetItem(const char* label_id, ImPlotItemFlags flags, bool* just_created = nullptr);

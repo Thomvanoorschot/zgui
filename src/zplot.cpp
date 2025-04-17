@@ -340,6 +340,15 @@ extern "C"
         return ImPlot::GetPlotDrawList();
     }
 
+    ZGUI_API bool zguiPlot_BeginItem(const char *label_id, ImPlotItemFlags flags = 0, ImPlotCol recolor_from = IMPLOT_AUTO)
+    {
+        return ImPlot::BeginItem(label_id, flags, recolor_from);
+    }
+
+    ZGUI_API void zguiPlot_EndItem()
+    {
+        ImPlot::EndItem();
+    }
 
     ZGUI_API void zguiPlot_EndPlot(void)
     {

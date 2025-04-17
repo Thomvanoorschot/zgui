@@ -700,3 +700,11 @@ pub fn plotToPixels(x: f64, y: f64, x_axis: Axis, y_axis: Axis) [2]f32 {
     return vec;
 }
 extern fn zguiPlot_PlotToPixels(out_vec: *[2]f32, x: f64, y: f64, x_axis: Axis, y_axis: Axis) void;
+//----------------------------------------------------------------------------------------------
+pub const ItemFlags = packed struct(u32) {
+    _padding: u32 = 0,
+};
+pub fn beginItem(label_id: [:0]const u8, flags: ItemFlags, recolor_from: [4]f32) bool {
+    return zguiPlot_BeginItem(label_id, flags, recolor_from);
+}
+extern fn zguiPlot_BeginItem(label_id: [*:0]const u8, flags: ItemFlags, recolor_from: [4]f32) bool;

@@ -637,6 +637,12 @@ IMPLOT_API bool BeginPlot(const char* title_id, const ImVec2& size=ImVec2(-1,0),
 // of an if statement conditioned on BeginPlot(). See example above.
 IMPLOT_API void EndPlot();
 
+// Begins a new item. Returns false if the item should not be plotted. Pushes PlotClipRect.
+IMPLOT_API bool BeginItem(const char* label_id, ImPlotItemFlags flags=0, ImPlotCol recolor_from=IMPLOT_AUTO);
+
+// Ends an item (call only if BeginItem returns true). Pops PlotClipRect.
+IMPLOT_API void EndItem();
+
 //-----------------------------------------------------------------------------
 // [SECTION] Begin/End Subplots
 //-----------------------------------------------------------------------------
