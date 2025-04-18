@@ -98,10 +98,16 @@ extern "C"
         return ImPlot::BeginPlot(title_id, {width, height}, flags);
     }
 
-    ZGUI_API ImVec2 zguiPlot_PlotToPixels(const ImPlotPoint& plt)
+    ZGUI_API void zguiPlot_PlotToPixels(double plot_x, double plot_y, float pixel_out[2])
     {
-        return ImPlot::PlotToPixels(plt);
+        const ImPlotPoint plt(plot_x, plot_y);
+        // This calls the ImPlot::PlotToPixels overload taking ImPlotPoint
+        // It will use the default axes (IMPLOT_AUTO)
+        const ImVec2 result = ImPlot::PlotToPixels(plt);
+        pixel_out[0] = result.x;
+        pixel_out[1] = result.y;
     }
+
 
     ZGUI_API void zguiPlot_PlotLineValues(
         const char *label_id,
