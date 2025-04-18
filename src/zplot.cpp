@@ -98,9 +98,9 @@ extern "C"
         return ImPlot::BeginPlot(title_id, {width, height}, flags);
     }
 
-    ZGUI_API ImVec2 zguiPlot_PlotToPixels(const ImPlotPoint& plt, ImAxis x_axis, ImAxis y_axis)
+    ZGUI_API ImVec2 zguiPlot_PlotToPixels(const ImPlotPoint& plt)
     {
-        return ImPlot::PlotToPixels(plt, x_axis, y_axis);
+        return ImPlot::PlotToPixels(plt);
     }
 
     ZGUI_API void zguiPlot_PlotLineValues(
