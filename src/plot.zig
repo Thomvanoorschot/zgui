@@ -694,12 +694,12 @@ extern fn zguiPlot_EndPlot() void;
 pub const getPlotDrawList = zguiPlot_GetPlotDrawList;
 extern fn zguiPlot_GetPlotDrawList() gui.DrawList;
 //----------------------------------------------------------------------------------------------
-pub fn plotToPixels(x: f64, y: f64, x_axis: Axis, y_axis: Axis) [2]f32 {
-    var vec: [2]f32 = undefined;
+pub fn plotToPixels(x: f64, y: f64, x_axis: Axis, y_axis: Axis) [2]64 {
+    var vec: [2]64 = undefined;
     zguiPlot_PlotToPixels(&vec, x, y, x_axis, y_axis);
     return vec;
 }
-extern fn zguiPlot_PlotToPixels(out_vec: *[2]f32, x: f64, y: f64, x_axis: Axis, y_axis: Axis) void;
+extern fn zguiPlot_PlotToPixels(out_vec: *[2]f64, x: f64, y: f64, x_axis: Axis, y_axis: Axis) void;
 //----------------------------------------------------------------------------------------------
 pub const ItemFlags = packed struct(u32) {
     _padding: u32 = 0,
