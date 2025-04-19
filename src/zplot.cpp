@@ -118,6 +118,16 @@ extern "C"
         ImPlot::SetupAxisFormat(axis, fmt);
     }
 
+    ZGUI_API void zguiPlot_SetupAxisLimitsConstraints(ImAxis axis, double v_min, double v_max)
+    {
+        ImPlot::SetupAxisLimitsConstraints(axis, v_min, v_max);
+    }
+
+    ZGUI_API void zguiPlot_SetupAxisZoomConstraints(ImAxis axis, double z_min, double z_max)
+    {
+        ImPlot::SetupAxisZoomConstraints(axis, z_min, z_max);
+    }
+
     ZGUI_API void zguiPlot_PlotLineValues(
         const char *label_id,
         ImGuiDataType data_type,

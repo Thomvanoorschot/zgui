@@ -721,3 +721,9 @@ extern fn zguiPlot_SetupAxisScale(axis: Axis, scale: Scale) void;
 //----------------------------------------------------------------------------------------------
 pub const setupAxisFormat = zguiPlot_SetupAxisFormat;
 extern fn zguiPlot_SetupAxisFormat(axis: Axis, fmt: [*:0]const u8) void;
+//----------------------------------------------------------------------------------------------
+pub const setupAxisZoomConstraints = zguiPlot_SetupAxisZoomConstraints;
+extern fn zguiPlot_SetupAxisZoomConstraints(axis: Axis, min: f64, max: f64) void;
+//----------------------------------------------------------------------------------------------
+pub const setupAxisLimitsConstraints = zguiPlot_SetupAxisLimitsConstraints;
+extern fn zguiPlot_SetupAxisLimitsConstraints(axis: Axis, min: f64, max: f64) void;
