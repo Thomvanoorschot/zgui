@@ -108,6 +108,15 @@ extern "C"
         pixel_out[1] = result.y;
     }
 
+    ZGUI_API void zguiPlot_SetupAxisScale(ImAxis axis, ImPlotScale scale)
+    {
+        ImPlot::SetupAxisScale(axis, scale);
+    }
+
+    ZGUI_API void zguiPlot_SetupAxisFormat(ImAxis axis, const char *fmt)
+    {
+        ImPlot::SetupAxisFormat(axis, fmt);
+    }
 
     ZGUI_API void zguiPlot_PlotLineValues(
         const char *label_id,

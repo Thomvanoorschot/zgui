@@ -701,13 +701,23 @@ pub fn plotToPixels(x: f64, y: f64) [2]f32 {
 }
 extern fn zguiPlot_PlotToPixels(plot_x: f64, plot_y: f64, pixel_out: *[2]f32) void;
 //----------------------------------------------------------------------------------------------
-pub const ItemFlags = packed struct(u32) {
-    _padding: u32 = 0,
-};
 pub fn beginItem(label_id: [:0]const u8) bool {
     return zguiPlot_BeginItem(label_id);
 }
 extern fn zguiPlot_BeginItem(label_id: [*:0]const u8) bool;
-//----------------------------------------------------------------------------------------------
+
 pub const endItem = zguiPlot_EndItem;
 extern fn zguiPlot_EndItem() void;
+//----------------------------------------------------------------------------------------------
+pub const Scale = enum(u32) {
+    linear = 0,
+    time,
+    log10,
+    symlog,
+};
+
+pub const SetupAxisScale = zguiPlot_SetupAxisScale;
+extern fn zguiPlot_SetupAxisScale(axis: Axis, scale: Scale) void;
+//----------------------------------------------------------------------------------------------
+pub const SetupAxisFormat = zguiPlot_SetupAxisFormat;
+extern fn zguiPlot_SetupAxisFormat(axis: Axis, fmt: [*:0]const u8) void;
