@@ -716,8 +716,8 @@ pub const Scale = enum(u32) {
     symlog,
 };
 
-pub const SetupAxisScale = zguiPlot_SetupAxisScale;
+pub const setupAxisScale = zguiPlot_SetupAxisScale;
 extern fn zguiPlot_SetupAxisScale(axis: Axis, scale: Scale) void;
 //----------------------------------------------------------------------------------------------
-pub const SetupAxisFormat = zguiPlot_SetupAxisFormat;
+pub const setupAxisFormat = zguiPlot_SetupAxisFormat;
 extern fn zguiPlot_SetupAxisFormat(axis: Axis, fmt: [*:0]const u8) void;
